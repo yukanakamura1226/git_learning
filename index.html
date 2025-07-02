@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitマスター - 新人エンジニア向け記憶学習アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Gitマスター</h1>
+            <p class="subtitle">新人エンジニア向け記憶学習アプリ</p>
+        </header>
+
+        <!-- カテゴリ選択画面 -->
+        <div id="category-selection" class="screen">
+            <h2>学習カテゴリを選択してください</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="basic">
+                    <div class="category-icon">📚</div>
+                    <h3>Gitの基本概念</h3>
+                    <p>リポジトリ、コミット、ブランチなど<br>Gitの基礎用語を学習</p>
+                    <div class="difficulty">初級</div>
+                </div>
+                
+                <div class="category-card" data-category="commands">
+                    <div class="category-icon">⌨️</div>
+                    <h3>Gitコマンドと操作</h3>
+                    <p>git add、git commit、git pushなど<br>実際のコマンドを習得</p>
+                    <div class="difficulty">中級</div>
+                </div>
+                
+                <div class="category-card" data-category="internal">
+                    <div class="category-icon">🔧</div>
+                    <h3>Gitの内部構造</h3>
+                    <p>オブジェクト、インデックスなど<br>Gitの仕組みを理解</p>
+                    <div class="difficulty">上級</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学習画面 -->
+        <div id="learning-screen" class="screen hidden">
+            <div class="learning-header">
+                <button id="back-to-categories" class="back-btn">← カテゴリ選択に戻る</button>
+                <h2 id="category-title"></h2>
+                <div class="progress-info">
+                    <span id="card-counter">1/15</span>
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="card-front">
+                        <div class="term-type" id="term-type"></div>
+                        <h3 id="term-name"></h3>
+                        <p class="hint">クリックして説明を表示</p>
+                    </div>
+                    
+                    <div class="card-back">
+                        <h3 id="term-name-back"></h3>
+                        <div class="definition" id="definition"></div>
+                        <div class="example-section">
+                            <h4>💡 実際の使用例</h4>
+                            <div class="example" id="example"></div>
+                        </div>
+                        <div class="practical-tip" id="practical-tip"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="learning-controls">
+                <button id="prev-card" class="nav-btn" disabled>← 前のカード</button>
+                <div class="understanding-buttons">
+                    <button id="not-understood" class="understanding-btn difficult">😅 難しい</button>
+                    <button id="somewhat-understood" class="understanding-btn okay">🤔 まあまあ</button>
+                    <button id="well-understood" class="understanding-btn easy">😊 理解できた</button>
+                </div>
+                <button id="next-card" class="nav-btn">次のカード →</button>
+            </div>
+        </div>
+
+        <!-- 完了画面 -->
+        <div id="completion-screen" class="screen hidden">
+            <div class="completion-content">
+                <h2>🎉 学習完了！</h2>
+                <div class="completion-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="total-cards">15</span>
+                        <span class="stat-label">学習カード数</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="difficult-cards">0</span>
+                        <span class="stat-label">復習が必要</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="mastered-cards">0</span>
+                        <span class="stat-label">習得済み</span>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>🎯 次のステップ</h3>
+                    <div id="recommendations"></div>
+                </div>
+            </div>
+            
+            <div class="completion-controls">
+                <button id="review-difficult" class="control-btn review-btn">難しいカードを復習</button>
+                <button id="try-another-category" class="control-btn">他のカテゴリを学習</button>
+                <button id="restart-category" class="control-btn">このカテゴリをもう一度</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

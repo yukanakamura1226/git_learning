@@ -1,0 +1,38 @@
+{
+  "name": "git-learning-app",
+  "version": "1.0.0",
+  "description": "新人エンジニア向けGit学習記憶アプリ",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Build complete - static files ready'",
+    "start": "npx serve .",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "git",
+    "learning",
+    "education",
+    "flashcards",
+    "version-control",
+    "engineering"
+  ],
+  "author": "Git Learning Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/git-learning-app.git"
+  },
+  "homepage": "https://git-learning-app.vercel.app",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
