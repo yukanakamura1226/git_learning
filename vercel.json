@@ -1,18 +1,6 @@
 {
   "version": 2,
   "name": "git-learning-app",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -32,10 +20,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "app/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
